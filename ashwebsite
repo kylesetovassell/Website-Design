@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Process | Ash Hill Planning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #1E3A8A;
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: 80px;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            height: 50px;
+            width: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #1E3A8A;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: #BCC6CC;
+        }
+
+        .nav-cta {
+            background: #1E3A8A;
+            color: white !important;
+            padding: 12px 24px;
+            border-radius: 4px;
+        }
+
+        .nav-cta:hover {
+            background: #1E3A8A;
+            color: white !important;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 80px 20px 40px;
+            background: linear-gradient(135deg, #1E3A8A 0%, #1E3A8A 100%);
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .page-header p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .intro-section {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1E3A8A;
+        }
+
+        .intro-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #1E3A8A;
+            margin-bottom: 15px;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto 80px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #1E3A8A;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 120px;
+            margin-bottom: 60px;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: #1E3A8A;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(43, 51, 42, 0.3);
+        }
+
+        .step-number-digit {
+            font-size: 36px;
+            line-height: 1;
+        }
+
+        .step-number-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        .step-content {
+            background: white;
+            padding: 35px;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .step-content:hover {
+            border-color: #BCC6CC;
+            box-shadow: 0 10px 30px rgba(43, 51, 42, 0.1);
+        }
+
+        .step-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #BCC6CC;
+        }
+
+        .step-duration {
+            display: inline-block;
+            background: #F5F7F9;
+            color: #1E3A8A;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .step-description {
+            color: #4B5563;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .step-details {
+            background: #F5F7F9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .step-details h4 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #1E3A8A;
+            font-weight: 600;
+        }
+
+        .step-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .step-details li {
+            padding: 6px 0 6px 25px;
+            position: relative;
+            color: #4B5563;
+            font-size: 15px;
+        }
+
+        .step-details li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #BCC6CC;
+            font-weight: bold;
+        }
+
+        .timeline-info {
+            background: linear-gradient(135deg, #1E3A8A 0%, #1E3A8A 90%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 8px;
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        .timeline-info h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .timeline-info p {
+            font-size: 18px;
+            line-height: 1.8;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .guarantees-section {
+            background: #F5F7F9;
+            padding: 80px 40px;
+            border-radius: 8px;
+            margin: 80px 0;
+        }
+
+        .guarantees-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #1E3A8A;
+        }
+
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .guarantee-card {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .guarantee-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-card h4 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #1E3A8A;
+        }
+
+        .guarantee-card p {
+            color: #6B7280;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .faq-section {
+            max-width: 900px;
+            margin: 80px auto;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #1E3A8A;
+        }
+
+        .faq-item {
+            background: white;
+            border: 2px solid #E5E7EB;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1E3A8A;
+        }
+
+        .faq-answer {
+            color: #4B5563;
+            line-height: 1.8;
+        }
+
+        .cta-section {
+            background: #F5F7F9;
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 60px;
+            border-radius: 8px;
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #1E3A8A;
+        }
+
+        .cta-section p {
+            color: #6B7280;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #1E3A8A;
+            color: white;
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #1E3A8A;
+        }
+
+        .btn-primary:hover {
+            background: white;
+            color: #1E3A8A;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 36px;
+            }
+
+            .timeline-line {
+                left: 25px;
+            }
+
+            .process-step {
+                padding-left: 80px;
+            }
+
+            .step-number {
+                width: 70px;
+                height: 70px;
+            }
+
+            .step-number-digit {
+                font-size: 28px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <svg class="logo" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="400" fill="transparent"/>
+                    <g transform="translate(200, 200)">
+                        <g transform="translate(-35, 0)">
+                            <path d="M -35 -50 L -10 -50 L 30 50 L 5 50 L -5 25 L -35 25 Z M -30 5 L -10 5 L -20 -20 Z" fill="#2B332A"/>
+                            <circle cx="-20" cy="15" r="15" fill="#BCC6CC"/>
+                            <circle cx="-20" cy="15" r="8" fill="#2B332A"/>
+                        </g>
+                        <g transform="translate(10, 0)">
+                            <rect x="-5" y="-50" width="18" height="100" fill="#2B332A"/>
+                            <rect x="32" y="-50" width="18" height="100" fill="#2B332A"/>
+                            <path d="M 13 -10 Q 27 -10 27 5 Q 27 20 13 20 L 32 20 L 32 -10 Z" fill="#2B332A"/>
+                            <circle cx="55" cy="5" r="20" fill="#2B332A"/>
+                            <circle cx="55" cy="5" r="12" fill="#BCC6CC"/>
+                        </g>
+                    </g>
+                </svg>
+                <a href="/" style="font-size: 20px; font-weight: 700; color: #2B332A; text-decoration: none;">Ash + Hill</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/our-process/">Our Process</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/about-us/">About</a></li>
+                <li><a href="/reviews/">Reviews</a></li>
+                <li><a href="/contact/" class="nav-cta">Free Consultation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>Our Process</h1>
+            <p>A clear, transparent journey from initial consultation to planning approval</p>
+        </div>
+
+        <div class="container">
+            <div class="intro-section">
+                <h2>How We Get Your Planning Permission Approved</h2>
+                <p>Getting planning permission in London doesn't have to be complicated. Our proven 6-step process has helped over 500 homeowners secure approval with a 92% first-time success rate.</p>
+                <p>We handle everything from initial site surveys to final submission, keeping you informed at every stage and responding quickly to any council queries.</p>
+            </div>
+
+            <!-- Timeline Process -->
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <!-- Step 1 -->
+                <div class="process-step">
+                    <div class="step-number">
+                        <span class="step-number-digit">1</span>
+                        <span class="step-number-label">FREE</span>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Free Consultation & Quote</h3>
+                        <span class="step-duration">⏱️ 30-60 minutes | Same day quote</span>
+                        <p class="step-description">We start with a no-obligation consultation to understand your project goals, budget, and timeline. We'll discuss your property, what you want to achieve, and provide honest advice on feasibility.</p>
+                        <div class="step-details">
+                            <h4>What happens in this stage:</h4>
+                            <ul>
+                                <li>Initial phone or video call to discuss your project</li>
+                                <li>Review of your property location and planning constraints</li>
+                                <li>Discussion of your budget and timeline expectations</li>
+                                <li>Assessment of Permitted Development eligibility (if applicable)</li>
+                                <li>Honest advice on likelihood of approval in your borough</li>
+                                <li>Fixed-fee quote provided within 24 hours</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step">
+                    <div class="step-number">
+                        <span class="step-number-digit">2</span>
+                        <span class="step-number-label">WEEK 1</span>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Site Survey & Measurements</h3>
+                        <span class="step-duration">⏱️ 1-2 hours on-site | Week 1</span>
+                        <p class="step-description">Once you approve our quote, we arrange a professional site visit to take accurate measurements and photographs. This is essential for creating precise architectural drawings.</p>
+                        <div class="step-details">
+                            <h4>What we do:</h4>
+                            <ul>
+                                <li>Complete measured survey of your property</li>
+                                <li>Photographic record of existing building and surrounding area</li>
+                                <li>Boundary and site constraint checks</li>
+                                <li>Assessment of neighboring properties (for impact analysis)</li>
+                                <li>Review of any existing drawings or documents you have</li>
+                                <li>Discussion of design preferences and requirements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step">
+                    <div class="step-number">
+                        <span class="step-number-digit">3</span>
+                        <span class="step-number-label">WEEK 1-2</span>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Design & Architectural Drawings</h3>
+                        <span class="step-duration">⏱️ 7-10 working days</span>
+                        <p class="step-description">Our team creates detailed architectural drawings to planning standards. We'll send you drafts for review and make any necessary revisions before finalizing the drawings.</p>
+                        <div class="step-details">
+                            <h4>Drawings included:</h4>
+                            <ul>
+                                <li>Existing floor plans, elevations, and sections</li>
+                                <li>Proposed floor plans, elevations, and sections</li>
+                                <li>Site location plan (1:1250 or 1:2500 scale)</li>
+                                <li>Site/block plan showing proposed works (1:200 or 1:500)</li>
+                                <li>Roof plans (where applicable)</li>
+                                <li>Design & Access Statement (for larger projects)</li>
+                                <li>One round of revisions included</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step">
+                    <div class="step-number">
+                        <span class="step-number-digit">4</span>
+                        <span class="step-number-label">WEEK 2-3</span>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Pre-Application Checks & Review</h3>
+                        <span class="step-duration">⏱️ 2-3 days</span>
+                        <p class="step-description">Before submission, we conduct thorough checks to ensure everything meets your local authority's requirements. This stage significantly reduces the chance of rejection.</p>
+                        <div class="step-details">
+                            <h4>Quality checks include:</h4>
+                            <ul>
+                                <li>Review against local planning policies and guidelines</li>
+                                <li>Check compliance with Conservation Area/Article 4 restrictions</li>
+                                <li>Verification all drawings meet council standards</li>
+                                <li>Preparation of supporting documents and statements</li>
+                                <li>Final review with you before submission</li>
+                                <li>Calculation and disclosure of all council fees</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="process-step">
+                    <div class="step-number">
+                        <span class="step-number-digit">5</span>
+                        <span class="step-number-label">WEEK 3</span>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Planning Application Submission</h3>
+                        <span class="step-duration">⏱️ 1 day | Week 3</span>
+                        <p class="step-description">We submit your complete application to the Planning Portal and your local council. You'll receive confirmation and a reference number within 48 hours.</p>
+                        <div class="step-details">
+                            <h4>Submission includes:</h4>
+                            <ul>
+                                <li>Complete online submission via Planning Portal</li>
+                                <li>All required drawings and supporting documents</li>
+                                <li>Payment of council planning fees (paid by you directly or via us)</li>
+                                <li>Formal validation by the local planning authority</li>
+                                <li>Confirmation email with application reference number</li>
+                                <li>Notification of site notice posting (if applicable)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="process-step">
+                    <div class="step-number">
+                        <span class="step-number-digit">6</span>
+                        <span class="step-number-label">8 WEEKS</span>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Council Review & Approval</h3>
+                        <span class="step-duration">⏱️ 8 weeks (or 13 weeks for major applications)</span>
+                        <p class="step-description">The council reviews your application. We monitor progress daily, respond to any queries, and keep you informed throughout the determination period.</p>
+                        <div class="step-details">
+                            <h4>During this stage:</h4>
+                            <ul>
+                                <li>Regular updates on application progress (weekly minimum)</li>
+                                <li>Immediate notification of any council queries or concerns</li>
+                                <li>Preparation and submission of any additional information requested</li>
+                                <li>Response to neighbour objections (if any)</li>
+                                <li>Liaison with planning officer regarding any issues</li>
+                                <li>Notification when decision is issued</li>
+                                <li>Delivery of approved planning permission documents</li>
+                                <li>Explanation of any planning conditions attached</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Info -->
+            <div class="timeline-info">
+                <h3>Total Timeline: 11-14 Weeks from Start to Approval</h3>
+                <p>From your initial consultation to receiving planning permission typically takes 11-14 weeks for standard applications. Larger or more complex projects may take 16-18 weeks. We'll give you a realistic timeline specific to your project and borough during your consultation.</p>
+            </div>
+
+            <!-- Guarantees Section -->
+            <div class="guarantees-section">
+                <h2 class="guarantees-title">What Makes Our Process Different</h2>
+                <div class="guarantees-grid">
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon">✓</div>
+                        <h4>92% First-Time Approval Rate</h4>
+                        <p>Our thorough pre-submission checks mean 92 out of 100 applications get approved first time.</p>
+                    </div>
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon">⚡</div>
+                        <h4>Fast Turnaround</h4>
+                        <p>Drawings completed in 7-10 days. Most applications submitted within 3 weeks of starting.</p>
+                    </div>
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon">💬</div>
+                        <h4>Regular Updates</h4>
+                        <p>Weekly progress reports minimum. Immediate notification of any issues or queries from the council.</p>
+                    </div>
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon">🎯</div>
+                        <h4>Fixed Fees</h4>
+                        <p>No hidden costs. The price we quote is the price you pay. Council fees disclosed upfront.</p>
+                    </div>
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon">🤝</div>
+                        <h4>Dedicated Team Member</h4>
+                        <p>One point of contact throughout. No call centers, no confusion about who you're dealing with.</p>
+                    </div>
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon">🔄</div>
+                        <h4>Resubmission Support</h4>
+                        <p>If refused (rare), we provide free advice on amendments and can handle resubmission at reduced cost.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2 class="faq-title">Common Questions About Our Process</h2>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">What do I need to provide to get started?</h4>
+                    <p class="faq-answer">Very little initially! We just need your property address, a brief description of what you want to do, and your contact details. During the site survey, having any existing plans or deeds can be helpful but not essential.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">Do I need to be present for the site survey?</h4>
+                    <p class="faq-answer">Ideally yes, but it's not essential. We need access to measure the property, but if you can't be there, we can arrange access with a neighbor, family member, or tenant. The survey typically takes 1-2 hours.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">Can I make changes to the drawings once they're done?</h4>
+                    <p class="faq-answer">Yes, one round of revisions is included in our fee. If you want significant design changes after that, there may be an additional charge depending on the extent of the changes required.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">What happens if my application is refused?</h4>
+                    <p class="faq-answer">While rare with our 92% approval rate, if your application is refused we provide free consultation on the reasons and potential amendments. We can also handle resubmissions at a reduced cost, or assist with planning appeals if appropriate.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">How do I pay council fees?</h4>
+                    <p class="faq-answer">Council planning fees are separate from our service fees. We'll calculate the exact amount and you can either pay the council directly when we submit, or we can pay on your behalf and invoice you (whichever you prefer).</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">Will you help with Building Regulations after approval?</h4>
+                    <p class="faq-answer">Yes! While our core service is planning permission, we can also provide Building Regulations drawings and coordinate with structural engineers as an additional service. Many clients use us for both.</p>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Ready to Get Started?</h2>
+                <p>Book your free consultation today and let's discuss your project</p>
+                <a href="/contact/" class="btn-primary">Get Your Free Consultation</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: #1E3A8A; color: white; padding: 60px 0 30px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 50px; margin-bottom: 50px;">
+                <!-- Company Info -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                        <svg style="height: 40px; width: 40px;" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(200, 200)">
+                                <g transform="translate(-35, 0)">
+                                    <path d="M -35 -50 L -10 -50 L 30 50 L 5 50 L -5 25 L -35 25 Z M -30 5 L -10 5 L -20 -20 Z" fill="#1E3A8A"/>
+                                    <circle cx="-20" cy="15" r="15" fill="#1E3A8A"/>
+                                    <circle cx="-20" cy="15" r="8" fill="#1E3A8A"/>
+                                </g>
+                                <g transform="translate(10, 0)">
+                                    <rect x="-5" y="-50" width="18" height="100" fill="##1E3A8A"/>
+                                    <rect x="32" y="-50" width="18" height="100" fill="#1E3A8A"/>
+                                    <path d="M 13 -10 Q 27 -10 27 5 Q 27 20 13 20 L 32 20 L 32 -10 Z" fill="#1E3A8A"/>
+                                    <circle cx="55" cy="5" r="20" fill="#1E3A8A"/>
+                                    <circle cx="55" cy="5" r="12" fill="#1E3A8A"/>
+                                </g>
+                            </g>
+                        </svg>
+                        <span style="font-size: 20px; font-weight: 700; color: white;">Ash + Hill</span>
+                    </div>
+                    <p style="color: #BCC6CC; line-height: 1.8; margin-bottom: 20px;">
+                        London's trusted planning consultants. Making planning permission simple since 2010.
+                    </p>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 style="color: white; font-size: 18px; font-weight: 700; margin-bottom: 20px;">Services</h3>
+                    <ul style="list-style: none; line-height: 2.2;">
+                        <li><a href="/services/" style="text-decoration: none; color: #BCC6CC;">Extensions</a></li>
+                        <li><a href="/services/" style="text-decoration: none; color: #BCC6CC;">Loft Conversions</a></li>
+                        <li><a href="/services/" style="text-decoration: none; color: #BCC6CC;">Basement Conversions</a></li>
+                        <li><a href="/services/" style="text-decoration: none; color: #BCC6CC;">Change of Use</a></li>
+                        <li><a href="/services/" style="text-decoration: none; color: #BCC6CC;">Permitted Development</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 style="color: white; font-size: 18px; font-weight: 700; margin-bottom: 20px;">Quick Links</h3>
+                    <ul style="list-style: none; line-height: 2.2;">
+                        <li><a href="/about-us/" style="text-decoration: none; color: #BCC6CC;">About Us</a></li>
+                        <li><a href="/our-process/" style="text-decoration: none; color: #BCC6CC;">Our Process</a></li>
+                        <li><a href="/reviews/" style="text-decoration: none; color: #BCC6CC;">Reviews</a></li>
+                        <li><a href="/contact/" style="text-decoration: none; color: #BCC6CC;">Contact</a></li>
+                        <li><a href="/privacy-policy/" style="text-decoration: none; color: #BCC6CC;">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 style="color: white; font-size: 18px; font-weight: 700; margin-bottom: 20px;">Get In Touch</h3>
+                    <p style="color: #BCC6CC; margin-bottom: 15px;">
+                        <strong>Phone:</strong><br>
+                        020 XXXX XXXX
+                    </p>
+                    <p style="color: #BCC6CC; margin-bottom: 15px;">
+                        <strong>Email:</strong><br>
+                        info@ashandhill.co.uk
+                    </p>
+                    <p style="color: #BCC6CC;">
+                        <strong>Hours:</strong><br>
+                        Mon-Fri: 9am-6pm<br>
+                        Sat: 10am-2pm
+                    </p>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid rgba(188, 198, 204, 0.2); padding-top: 30px; text-align: center;">
+                <p style="color: #BCC6CC; font-size: 14px;">Copyright © 2025 Ash Hill Planning | All Rights Reserved | Registered in England & Wales</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
